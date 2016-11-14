@@ -1,0 +1,11 @@
+<div class="restaurant-popup">
+  <h1><%= data.location.name %></h1>
+  <h2 class="type"><%= data.location.type %></h2>
+  <% if (data.location.photo_url) { %>
+  <img src="<%= data.location.photo_url %>" class="photo">
+  <% } %>
+  <h3 class="address"><%= data.location.address %></h3>
+  <a class="phone" href="tel:<%= data.location.phone %>"><%= data.location.phone %></a>
+  <p><%= data.location.description %></p>
+  <a href="<%= data.location.story_url %>" target="_parent" class="review-link">Read full review</a>
+</div>

@@ -1,0 +1,98 @@
+@import "seattletimes";
+
+.interactive {
+  .display-flex();
+  .align-items(stretch);
+  max-width: 960px;
+
+  @media @mobile {
+    display: block;
+  }
+
+  .map-wrapper {
+    .flex(0 0 66%);
+  }
+
+  .detail-panel {
+    .flex(0 0 33%);
+  }
+}
+
+.map-wrapper {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+
+    @media @mobile {
+      padding-bottom: 60%;
+    }
+  }
+
+  leaflet-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .locate-me {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: 1px solid @df-light-gray;
+    border-radius: 4px;
+    padding: 4px 8px;
+    box-shadow: 0 0 6px fade(black, 30%);
+    text-transform: uppercase;
+    cursor: pointer;
+
+    img {
+      vertical-align: middle;
+      height: 16px;
+    }
+  }
+}
+
+.restaurant {
+  background: @df-goldenrod;
+  border-radius: 100%;
+  border: 1px solid white;
+  box-shadow: 0 0 4px fade(black, 10%);
+}
+
+.restaurant-popup {
+  font-size: 14px;
+  font-family: @df-sans;
+
+  h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 16px;
+    color: @df-middle-gray;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+}
+
+.detail-panel {
+  padding: 16px;
+
+  &.empty {
+    text-align: center;
+    padding-top: 80px;
+    color: @df-middle-gray;
+  }
+}

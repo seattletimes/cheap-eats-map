@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <%= t.include("partials/_head.html") %>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+    <responsive-child>
+      <main class="interactive">
+        <div class="map-wrapper">
+          <leaflet-map aria-hidden="true">
+            <tile-layer layer="cartoPositron"></tile-layer>
+          </leaflet-map>
+          <button class="locate-me"><img src="./assets/gps.svg"> <label>Locate me</label></button>
+        </div>
+        <div class="detail-panel empty">Click a marker for details</div>
+      </main>
+    </responsive-child>
+
+    <script>
+window.eats = <%= JSON.stringify(json.locations.filter(r => r.lat)) %>
+    </script>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
