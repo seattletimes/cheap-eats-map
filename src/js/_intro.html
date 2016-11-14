@@ -2,6 +2,9 @@
 
 <p class="chatter">Chatter goes here</p>
 
+
+
+<h2>Categories <a class="reset">(reset)</a></h2>
 <ul class="categories">
 <% data.categories.forEach(function(cat) { %>
   <li>
@@ -17,6 +20,7 @@
 <% }); %>
 </ul>
 
+<h2>Top results</h2>
 <ul class="locations">
   <% data.top.forEach(function(l) { %>
   <li data-marker="<%= l.id %>"> <%= l.name %>

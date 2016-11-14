@@ -104,6 +104,9 @@ detailPanel.addEventListener("change", function(e) {
 detailPanel.addEventListener("click", function(e) {
   if (e.target.classList.contains("back")) {
     reset();
+  } else if (e.target.classList.contains("reset")) {
+    selected = [];
+    reset();
   } else if (e.target.hasAttribute("data-marker")) {
     var id = e.target.getAttribute("data-marker") * 1;
     var location = lookup[id];

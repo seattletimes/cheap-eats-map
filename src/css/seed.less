@@ -90,13 +90,21 @@
 .detail-panel {
   padding: 16px;
 
-  &.empty {
-    text-align: center;
-    padding-top: 80px;
-    color: @df-middle-gray;
+  h2 {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  a {
+    cursor: pointer;
+
+    &.reset {
+      font-size: 14px;
+    }
   }
 
   .categories {
+    text-align: center;
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -112,11 +120,34 @@
     display: none;
 
     & + label {
-
+      cursor: pointer;
+      color: @df-middle-gray;
+      border-bottom: 1px solid transparent;
     }
 
     &:checked + label {
-      font-weight: bold;
+      color: black;
+      border-bottom: 1px solid black;
+    }
+  }
+
+  .locations {
+    list-style-type: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+      display: block;
+      border: 1px solid @df-light-gray;
+      padding: 2px 4px;
+      color: black;
+      margin-bottom: 2px;
+
+      &:hover, &:focus {
+        background: @df-light-gray;
+      }
     }
   }
 }
