@@ -6,25 +6,37 @@ require("component-responsive-frame/child");
 require("component-leaflet-map");
 
 var geolocation = require("./lib/geolocation");
+var dot = require("./lib/dot");
+var $ = require("./lib/qsa");
 
 var mapElement = document.querySelector("leaflet-map");
 var map = mapElement.map;
 var L = mapElement.leaflet;
 var detailPanel = document.querySelector(".detail-panel");
-var dot = require("./lib/dot");
 
 var locationMarker = L.circle();
+var displayLayer = L.featureGroup();
 
-var restaurantLayer = L.featureGroup();
+var categoryMap = {};
+var selected = [];
 
 var detailTemplate = dot.compile(require("./_detail.html"));
+var introTemplate = dot.compile(require("./_intro.html"));
 
-var showRestaurant = function(e) {
+var reset = function() {
+  var categories = Object.keys(categoryMap);
+  var top = window.eats.filter(l => selected.length ? selected.some(s => s in l.categories): true).slice(0, 5);
+  detailPanel.innerHTML = introTemplate({ categories, selected, top });
+  detailPanel.classList.add("empty");
+  map.fitBounds(displayLayer.getBounds(), { maxZoom: 11 });
+};
+
+var clickedMarker = function(e) {
   var marker = e.target;
   var location = marker.data;
   detailPanel.innerHTML = detailTemplate({ location });
   detailPanel.classList.remove("empty");
-}
+};
 
 var locateMe = document.querySelector(".locate-me");
 locateMe.addEventListener("click", function() {
@@ -37,23 +49,58 @@ locateMe.addEventListener("click", function() {
       locationMarker.setRadius(event.coords.accuracy);
       locationMarker.addTo(map);
       var bounds = locationMarker.getBounds();
-      map.fitBounds(bounds);
+      map.fitBounds(bounds, { maxZoom: 11 });
       locateMe.querySelector("label").innerHTML = "Clear";
     });
   }
 });
 
 window.eats.forEach(function(location) {
+  var types = location.type.split(/,\s*/);
+  location.categories = {};
+  types.forEach(t => {
+    location.categories[t] = true;
+    if (!categoryMap[t]) categoryMap[t] = [];
+    categoryMap[t].push(location);
+  });
   var marker = L.marker([location.lat, location.long], {
     icon: L.divIcon({
       className: "restaurant"
     })
   });
-  marker.addEventListener("click", showRestaurant);
-  marker.bindPopup(`<div class="restaurant-popup"><h1>${location.name}</h1></div>`)
+  var [month, day, year] = location.review_date.split("/").map(Number);
+  location.date = new Date(year, month - 1, day);
+  marker.addEventListener("click", clickedMarker);
+  marker.bindPopup(`<div class="restaurant-popup"><h1>${location.name}</h1></div>`);
   marker.data = location;
-  marker.addTo(restaurantLayer);
+  location.marker = marker;
+  marker.addTo(displayLayer);
 });
 
-restaurantLayer.addTo(map);
-map.fitBounds(restaurantLayer.getBounds());
+window.eats.sort((a, b) => b.date - a.date);
+
+detailPanel.addEventListener("change", function(e) {
+  var checked = $("input:checked", detailPanel).map(el => el.id);
+  selected = checked;
+  window.eats.forEach(function(location) {
+    var match = selected.length ? selected.some(s => s in location.categories) : true;
+    if (match) {
+      displayLayer.addLayer(location.marker);
+    } else {
+      displayLayer.removeLayer(location.marker);
+    }
+  });
+  reset();
+});
+
+detailPanel.addEventListener("click", function(e) {
+  if (e.target.classList.contains("back")) {
+    reset();
+  } else if (e.target.hasAttribute("data-marker")) {
+    var id = e.target.getAttribute("data-marker");
+  }
+});
+
+displayLayer.addTo(map);
+map.fitBounds(displayLayer.getBounds(), { maxZoom: 11 });
+reset();

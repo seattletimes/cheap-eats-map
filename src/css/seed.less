@@ -95,4 +95,28 @@
     padding-top: 80px;
     color: @df-middle-gray;
   }
+
+  .categories {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 14px;
+
+    li {
+      display: inline-block;
+      padding: 2px 4px;
+    }
+  }
+
+  input[type=checkbox] {
+    display: none;
+
+    & + label {
+
+    }
+
+    &:checked + label {
+      font-weight: bold;
+    }
+  }
 }

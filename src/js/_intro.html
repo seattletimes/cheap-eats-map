@@ -1,0 +1,24 @@
+<h1>Cheap eats, mapped</h1>
+
+<p class="chatter">Chatter goes here</p>
+
+<ul class="categories">
+<% data.categories.forEach(function(cat) { %>
+  <li>
+    <input
+      type="checkbox"
+      data-cat="<%= cat %>"
+      id="<%= cat %>"
+      <% if (data.selected.indexOf(cat) > -1) { %>
+      checked="checked"
+      <% } %>
+    >
+    <label for="<%= cat %>"><%= cat %></label>
+<% }); %>
+</ul>
+
+<ul class="locations">
+  <% data.top.forEach(function(l) { %>
+  <li> <%= l.name %>
+  <% }); %>
+</ul>
