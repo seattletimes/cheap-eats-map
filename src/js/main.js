@@ -13,11 +13,13 @@ var mapElement = document.querySelector("leaflet-map");
 var map = mapElement.map;
 var L = mapElement.leaflet;
 var detailPanel = document.querySelector(".detail-panel");
+var maxZoom = 14;
 
 var locationMarker = L.circle();
 var displayLayer = L.featureGroup();
 
 var categoryMap = {};
+var lookup = {};
 var selected = [];
 
 var detailTemplate = dot.compile(require("./_detail.html"));
@@ -28,14 +30,18 @@ var reset = function() {
   var top = window.eats.filter(l => selected.length ? selected.some(s => s in l.categories): true).slice(0, 5);
   detailPanel.innerHTML = introTemplate({ categories, selected, top });
   detailPanel.classList.add("empty");
-  map.fitBounds(displayLayer.getBounds(), { maxZoom: 11 });
+  map.fitBounds(displayLayer.getBounds(), { maxZoom });
 };
+
+var setLocation = function(location) {
+  detailPanel.innerHTML = detailTemplate({ location });
+  detailPanel.classList.remove("empty");
+}
 
 var clickedMarker = function(e) {
   var marker = e.target;
   var location = marker.data;
-  detailPanel.innerHTML = detailTemplate({ location });
-  detailPanel.classList.remove("empty");
+  setLocation(location);
 };
 
 var locateMe = document.querySelector(".locate-me");
@@ -49,13 +55,15 @@ locateMe.addEventListener("click", function() {
       locationMarker.setRadius(event.coords.accuracy);
       locationMarker.addTo(map);
       var bounds = locationMarker.getBounds();
-      map.fitBounds(bounds, { maxZoom: 11 });
+      map.fitBounds(bounds, { maxZoom });
       locateMe.querySelector("label").innerHTML = "Clear";
     });
   }
 });
 
-window.eats.forEach(function(location) {
+window.eats.forEach(function(location, i) {
+  location.id = i;
+  lookup[i] = location;
   var types = location.type.split(/,\s*/);
   location.categories = {};
   types.forEach(t => {
@@ -97,10 +105,13 @@ detailPanel.addEventListener("click", function(e) {
   if (e.target.classList.contains("back")) {
     reset();
   } else if (e.target.hasAttribute("data-marker")) {
-    var id = e.target.getAttribute("data-marker");
+    var id = e.target.getAttribute("data-marker") * 1;
+    var location = lookup[id];
+    setLocation(location);
+    map.setView(location.marker.getLatLng(), 14);
   }
 });
 
 displayLayer.addTo(map);
-map.fitBounds(displayLayer.getBounds(), { maxZoom: 11 });
+map.fitBounds(displayLayer.getBounds(), { maxZoom });
 reset();

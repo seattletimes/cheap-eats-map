@@ -19,6 +19,6 @@
 
 <ul class="locations">
   <% data.top.forEach(function(l) { %>
-  <li> <%= l.name %>
+  <li data-marker="<%= l.id %>"> <%= l.name %>
   <% }); %>
 </ul>
