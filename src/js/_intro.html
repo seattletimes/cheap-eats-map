@@ -4,7 +4,11 @@
 
 
 
-<h2>Categories <a class="reset">(reset)</a></h2>
+<h2>Categories
+  <% if (data.selected.length) { %>
+  <a class="reset">(reset)</a>
+  <% } %>
+</h2>
 <ul class="categories">
 <% data.categories.forEach(function(cat) { %>
   <li>

@@ -26,17 +26,20 @@ var detailTemplate = dot.compile(require("./_detail.html"));
 var introTemplate = dot.compile(require("./_intro.html"));
 
 var reset = function() {
-  var categories = Object.keys(categoryMap);
+  var categories = Object.keys(categoryMap).sort();
   var top = window.eats.filter(l => selected.length ? selected.some(s => s in l.categories): true).slice(0, 5);
   detailPanel.innerHTML = introTemplate({ categories, selected, top });
-  detailPanel.classList.add("empty");
   map.fitBounds(displayLayer.getBounds(), { maxZoom });
+  if (selected.length) {
+    detailPanel.classList.add("filtered");
+  } else {
+    detailPanel.classList.remove("filtered");
+  }
 };
 
 var setLocation = function(location) {
   detailPanel.innerHTML = detailTemplate({ location });
-  detailPanel.classList.remove("empty");
-}
+};
 
 var clickedMarker = function(e) {
   var marker = e.target;
