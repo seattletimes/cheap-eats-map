@@ -27,7 +27,17 @@ var introTemplate = dot.compile(require("./_intro.html"));
 
 var reset = function() {
   var categories = Object.keys(categoryMap).sort();
-  var top = window.eats.filter(l => selected.length ? selected.some(s => s in l.categories): true).slice(0, 5);
+  var top = [];
+  window.eats.forEach(function(location) {
+    var match = selected.length ? selected.some(s => s in location.categories) : true;
+    if (match) {
+      displayLayer.addLayer(location.marker);
+      top.push(location);
+    } else {
+      displayLayer.removeLayer(location.marker);
+    }
+  });
+  top = top.slice(0, 5);
   detailPanel.innerHTML = introTemplate({ categories, selected, top });
   map.fitBounds(displayLayer.getBounds(), { maxZoom });
   if (selected.length) {
@@ -93,14 +103,6 @@ window.eats.sort((a, b) => b.date - a.date);
 detailPanel.addEventListener("change", function(e) {
   var checked = $("input:checked", detailPanel).map(el => el.id);
   selected = checked;
-  window.eats.forEach(function(location) {
-    var match = selected.length ? selected.some(s => s in location.categories) : true;
-    if (match) {
-      displayLayer.addLayer(location.marker);
-    } else {
-      displayLayer.removeLayer(location.marker);
-    }
-  });
   reset();
 });
 
