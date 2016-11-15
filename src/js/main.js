@@ -14,6 +14,8 @@ var map = mapElement.map;
 var L = mapElement.leaflet;
 var detailPanel = document.querySelector(".detail-panel");
 var maxZoom = 14;
+var listOffset = 0;
+var listLength = 10;
 
 var locationMarker = L.circle();
 var displayLayer = L.featureGroup();
@@ -27,18 +29,23 @@ var introTemplate = dot.compile(require("./_intro.html"));
 
 var reset = function() {
   var categories = Object.keys(categoryMap).sort();
-  var top = [];
+  var results = [];
   window.eats.forEach(function(location) {
     var match = selected.length ? selected.some(s => s in location.categories) : true;
     if (match) {
       displayLayer.addLayer(location.marker);
-      top.push(location);
+      results.push(location);
     } else {
       displayLayer.removeLayer(location.marker);
     }
   });
-  top = top.slice(0, 5);
-  detailPanel.innerHTML = introTemplate({ categories, selected, top });
+  if (listOffset > results.length) {
+    listOffset = 0;
+  }
+  if (listOffset < 0) {
+    listOffset = 0;
+  }
+  detailPanel.innerHTML = introTemplate({ categories, selected, results, listOffset, listLength });
   map.fitBounds(displayLayer.getBounds(), { maxZoom });
   if (selected.length) {
     detailPanel.classList.add("filtered");
@@ -48,6 +55,7 @@ var reset = function() {
 };
 
 var setLocation = function(location) {
+  location.marker.openPopup();
   detailPanel.innerHTML = detailTemplate({ location });
 };
 
@@ -77,6 +85,7 @@ locateMe.addEventListener("click", function() {
 window.eats.forEach(function(location, i) {
   location.id = i;
   lookup[i] = location;
+
   var types = location.type.split(/,\s*/);
   location.categories = {};
   types.forEach(t => {
@@ -84,9 +93,16 @@ window.eats.forEach(function(location, i) {
     if (!categoryMap[t]) categoryMap[t] = [];
     categoryMap[t].push(location);
   });
+
+  if (location.website.indexOf("://") == -1) {
+    location.website = "http://" + location.website;
+  }
+
+  var size = 16;
   var marker = L.marker([location.lat, location.long], {
     icon: L.divIcon({
-      className: "restaurant"
+      className: "restaurant",
+      iconSize: [size, size]
     })
   });
   var [month, day, year] = location.review_date.split("/").map(Number);
@@ -103,6 +119,7 @@ window.eats.sort((a, b) => b.date - a.date);
 detailPanel.addEventListener("change", function(e) {
   var checked = $("input:checked", detailPanel).map(el => el.id);
   selected = checked;
+  listOffset = 0;
   reset();
 });
 
@@ -110,7 +127,15 @@ detailPanel.addEventListener("click", function(e) {
   if (e.target.classList.contains("back")) {
     reset();
   } else if (e.target.classList.contains("reset")) {
+    listOffset = 0;
     selected = [];
+    reset();
+  } else if (e.target.classList.contains("paginate")) {
+    if (e.target.classList.contains("next")) {
+      listOffset += listLength;
+    } else {
+      listOffset -= listLength;
+    }
     reset();
   } else if (e.target.hasAttribute("data-marker")) {
     var id = e.target.getAttribute("data-marker") * 1;

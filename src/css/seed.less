@@ -63,6 +63,10 @@
   border-radius: 100%;
   border: 1px solid white;
   box-shadow: 0 0 4px fade(black, 10%);
+
+  &.active {
+    outline: 1px dotted @df-dark-gray;
+  }
 }
 
 .restaurant-popup {
@@ -88,7 +92,16 @@
 }
 
 .detail-panel {
-  padding: 16px;
+  padding: 0 16px;
+
+  @media @mobile {
+    display: block;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin: 0;
+  }
 
   h2 {
     font-size: 16px;
@@ -122,12 +135,16 @@
     & + label {
       cursor: pointer;
       color: @df-middle-gray;
-      border-bottom: 1px solid transparent;
+      border-bottom: 1px solid @df-light-gray;
     }
 
     &:checked + label {
       color: black;
       border-bottom: 1px solid black;
+      &::before {
+        content: "✓";
+        padding-right: 4px;
+      }
     }
   }
 
@@ -140,14 +157,22 @@
     li {
       cursor: pointer;
       display: block;
-      border: 1px solid @df-light-gray;
-      padding: 2px 4px;
+      border-bottom: 1px dotted @df-light-gray;
+      padding: 2px 0px;
       color: black;
       margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       &:hover, &:focus {
-        background: @df-light-gray;
+        text-decoration: underline;
       }
     }
+  }
+
+  .pagination {
+    .display-flex();
+    .justify-content(space-between);
   }
 }
