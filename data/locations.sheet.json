@@ -1,6 +1,7 @@
 [
   {
     "name": "La Teranga",
+    "picks": "X",
     "type": "AFRICAN",
     "review_date": "1/22/16",
     "author": "Tyrone Beason",
@@ -89,6 +90,7 @@
   },
   {
     "name": "Ramen Bushi-Do",
+    "picks": "X",
     "type": "ASIAN, JAPANESE",
     "review_date": "8/26/16",
     "author": "Tan Vinh",
@@ -119,6 +121,7 @@
   },
   {
     "name": "Dough Zone",
+    "picks": "X",
     "type": "ASIAN, CHINESE",
     "review_date": "10/10/14",
     "author": "Mark Yuasa",
@@ -193,6 +196,7 @@
   },
   {
     "name": "Triple XXX Root Beer Drive-in",
+    "picks": "X",
     "type": "AMERICAN, BURGERS",
     "review_date": "5/8/15",
     "author": "Mark Yuasa",
@@ -207,6 +211,7 @@
   },
   {
     "name": "Vif",
+    "picks": "X",
     "type": "AMERICAN, CAFE",
     "review_date": "9/2/16",
     "author": "Rebekah Denn",
@@ -222,6 +227,7 @@
   },
   {
     "name": "Peloton",
+    "picks": "X",
     "type": "AMERICAN, CAFE",
     "review_date": "8/26/16",
     "author": "Bethany Jean Clement",
@@ -282,6 +288,7 @@
   },
   {
     "name": "Xi'an Noodles",
+    "picks": "X",
     "type": "CHINESE, ASIAN",
     "review_date": "7/29/16",
     "author": "Bethany Jean Clement",
@@ -342,6 +349,7 @@
   },
   {
     "name": "Shug's Soda Fountain & Ice Cream",
+    "picks": "X",
     "type": "DESSERT",
     "review_date": "7/15/16",
     "author": "Paige Collins",
@@ -474,6 +482,7 @@
   },
   {
     "name": "Chili's South Indian Cuisine",
+    "picks": "X",
     "type": "INDIAN",
     "review_date": "8/5/16",
     "author": "Jill Lightner",
@@ -489,6 +498,7 @@
   },
   {
     "name": "Mo & Lu Pasta Co.",
+    "picks": "X",
     "type": "ITALIAN",
     "review_date": "7/22/16",
     "author": "Tan Vinh",
@@ -539,7 +549,7 @@
     "author": "Tan Vinh",
     "story_url": "http://www.seattletimes.com/life/food-drink/highly-anticipated-arashi-ramen-opens-in-ballard/",
     "photo_url": "http://static.seattletimes.com/wp-content/uploads/2016/04/3e65e4e0-0045-11e6-aeee-8c57dec08d72-780x500.jpg",
-    "description": "A tonkotsu ramen shop that earned a fan base in the south end has now ventured north to Seattle. Its\"Arashi Ramen' bowl is its most hearty, though for something different try its black garlic or the tantan men, the latter a sesame paste ramen.",
+    "description": "A tonkotsu ramen shop that earned a fan base in the south end has now ventured north to Seattle. Its \"Arashi Ramen' bowl is its most hearty, though for something different try its black garlic or the tantan men, the latter a sesame paste ramen.",
     "address": "5401 20th Ave. N.W., Seattle",
     "neighborhood": "Ballard",
     "lat": 47.6682139,
@@ -623,6 +633,7 @@
   },
   {
     "name": "Bok A Bok",
+    "picks": "X",
     "type": "KOREAN, ASIAN",
     "review_date": "6/24/16",
     "author": "Tan Vinh",
@@ -697,6 +708,7 @@
   },
   {
     "name": "El Sirenito",
+    "picks": "X",
     "type": "MEXICAN",
     "review_date": "11/27/15",
     "author": "Bethany Jean Clement",
@@ -801,6 +813,7 @@
   },
   {
     "name": "Dino's Tomato Pie",
+    "picks": "X",
     "type": "PIZZA",
     "review_date": "3/18/16",
     "author": "Bethany Jean Clement",
@@ -845,6 +858,7 @@
   },
   {
     "name": "Cheese Wizards",
+    "picks": "X",
     "type": "SANDWICHES, AMERICAN",
     "review_date": "8/26/16",
     "author": "Paige Collins",
@@ -860,6 +874,7 @@
   },
   {
     "name": "Sixth Avenue Eats",
+    "picks": "X",
     "type": "SANDWICHES, AMERICAN",
     "review_date": "8/19/16",
     "author": "Paige Collins",
@@ -920,6 +935,7 @@
   },
   {
     "name": "The Faerie Queene",
+    "picks": "X",
     "type": "SEAFOOD",
     "review_date": "9/4/15",
     "author": "Bethany Jean Clement",
@@ -935,6 +951,7 @@
   },
   {
     "name": "Burien Fish House",
+    "picks": "X",
     "type": "SEAFOOD",
     "review_date": "3/4/16",
     "author": "Susan Kelleher",
@@ -950,11 +967,12 @@
   },
   {
     "name": "Salaama Restaurant",
+    "picks": "X",
     "type": "AFRICAN",
     "review_date": "10/11/13",
     "author": "Susan Kelleher",
     "story_url": "http://www.seattletimes.com/life/food-drink/salaama-restaurant-fast-friendly-somali-fare-in-tukwila/",
-    "description": "The Somali eatery caters to East African clients and English-speaking travelers with equal hospitality. Breakfast offerings consist of saut'ed meats &mdash; chicken, liver or beef &mdash; or pinto beans, served with a choice of injera (a spongy sourdough pancake), pita bread or mufo, a Somali cornbread. Lunch/dinner choices include suqaar, chicken or beef saut'ed with onion, parsley, tomatoes, cumin and garlic; roasted goat; and chicken, beef or fish shawarma.",
+    "description": "The Somali eatery caters to East African clients and English-speaking travelers with equal hospitality. Breakfast offerings consist of saut'ed meats &mdash; chicken, liver or beef &mdash; or pinto beans, served with a choice of injera (a spongy sourdough pancake), pita bread or mufo, a Somali cornbread. Lunch/dinner choices include suqaar, chicken or beef sauteed with onion, parsley, tomatoes, cumin and garlic; roasted goat; and chicken, beef or fish shawarma.",
     "address": "13820 Tukwila International Blvd., Tukwila",
     "neighborhood": "Tukwila",
     "lat": 47.4790591,
@@ -964,6 +982,7 @@
   },
   {
     "name": "Sunset Fried Chicken Sandwiches",
+    "picks": "X",
     "type": "SOUTHERN, SANDWICHES",
     "review_date": "5/27/16",
     "author": "Bethany Jean Clement",
@@ -978,22 +997,8 @@
     "website": "sunsetfriedchicken.com"
   },
   {
-    "name": "Atta Boy",
-    "type": "SOUTHERN",
-    "review_date": "8/21/15",
-    "author": "Tan Vinh",
-    "story_url": "http://www.seattletimes.com/life/food-drink/grown-up-sandwiches-at-atta-boy/",
-    "photo_url": "http://static.seattletimes.com/wp-content/uploads/2015/08/a380fcf4-452c-11e5-a826-6f15e8e0b44c-300x192.jpg",
-    "description": "Zachary Chambers' walk-up window inside Bar Sue serves his popular pork belly porchetta sandwich, one of the better sandwiches you can get for under $10 on Capitol Hill. The rest of his menu is mostly Southern comfort food, from stellar shrimp and grits to a fried chicken sandwich.",
-    "address": "1407 14th Ave., Seattle",
-    "neighborhood": "Capitol Hill",
-    "lat": 47.6131397,
-    "long": "-122.3143376",
-    "phone": "206-328-0888",
-    "website": "facebook.com/thatsoneboy"
-  },
-  {
     "name": "Country Dough",
+    "picks": "X",
     "type": "CHINESE, ASIAN",
     "review_date": "7/24/15",
     "author": "Brian Thomas Gallagher",
@@ -1024,6 +1029,7 @@
   },
   {
     "name": "Manao Thai Street Eats",
+    "picks": "X",
     "type": "THAI, ASIAN",
     "review_date": "8/7/15",
     "author": "Tyrone Beason",
@@ -1054,6 +1060,7 @@
   },
   {
     "name": "Vietnam House",
+    "picks": "X",
     "type": "VIETNAMESE, ASIAN",
     "review_date": "3/11/16",
     "author": "Tan Vinh",
@@ -1084,6 +1091,7 @@
   },
   {
     "name": "Dong Thap Noodles",
+    "picks": "X",
     "type": "VIETNAMESE, ASIAN",
     "review_date": "10/16/15",
     "author": "Bethany Jean Clement",
@@ -1096,5 +1104,68 @@
     "long": "-122.317441",
     "phone": "206-325-1122",
     "website": "facebook.com/dongthapnoodles"
+  },
+  {
+    "name": "Big Chickie",
+    "picks": "X",
+    "type": "LATIN AMERICAN",
+    "review_date": "10/29/14",
+    "author": "Tan Vinh",
+    "story_url": "http://www.seattletimes.com/life/food-drink/big-chickie-tastes-like-chicken-and-itrsquos-good/",
+    "description": "This shack in Hillman City quickly gained a following for its Peruvian-style rotisserie chicken, especially for the charred skin and citrusy, dark meat. Twenty-two bucks get you a whole chicken with two sides, four cornbread muffins and three dipping sauces. It’s several notches better than your typical supermarket rotisserie takeout.",
+    "address": "5520 Rainier Ave. S., Seattle",
+    "neighborhood": "Hillman City",
+    "website": "bigchickie.com"
+  },
+  {
+    "name": "Red Star Taco Bar",
+    "picks": "X",
+    "type": "MEXICAN",
+    "review_date": "7/4/2014",
+    "author": "Katrina Barlow",
+    "story_url": "http://www.seattletimes.com/life/food-drink/red-star-taco-bar-hits-its-marks-in-fremont/",
+    "description": "The Lenin statue stares in Red Star’s direction, probably thinking about the tortilla-chip-crusted catfish tacos ($4). Slushy margaritas are $6, and the pomegranate version hits sweet-tart exactly right. The place is relaxed, and the owners, two former neighborhood bartenders, don’t tolerate Fremont overindulgers on (wooooo!) weekend nights. ",
+    "address": "513 N. 36th St., Seattle",
+    "neighborhood": "Fremont",
+    "phone": "206-258-3087",
+    "website": "redstartacobar.com"
+  },
+  {
+    "name": "Midori Bakery",
+    "picks": "X",
+    "type": "BAKERY",
+    "review_date": "1/14/15",
+    "author": "Tan Vinh",
+    "story_url": "http://www.seattletimes.com/life/food-drink/eat-up-seattle-and-the-eastside-best-new-cheap-eats-for-2015/",
+    "description": "Midori started as a modest coffee-and-pastry counter in a warehouse in the back of an industrial area in Redmond. Thanks to a cult following for its croissants, Midori moved into bigger digs in 2014, expanding into a bakery and cafe, serving sandwiches from baguettes baked every morning to dense Kouign-amanns to sink your teeth into. Pastries are $4 or less, while sandwiches cost $9.",
+    "address": "16505 Redmond Way, Redmond",
+    "neighborhood": "Redmond",
+    "phone": "425-836-6583",
+    "website": "midoribakery.com"
+  },
+  {
+    "name": "Trove Noodle",
+    "picks": "X",
+    "type": "ASIAN",
+    "photo_url": "http://static.seattletimes.com/wp-content/uploads/2016/01/08fb2a94-7ab8-11e5-8d7d-34ab89db2894-1020x680.jpg",
+    "description": "Trove isn’t so much a restaurant as a complex. In its priciest zone, Trove BBQ, you can spend $100 for a tower of meat. But at Trove Noodle’s lab-like counter, you can try this Capitol Hill place from the famed chefs of Joule and Revel for $12 a bowl. The chewy discs of rice cake with rich lamb curry are especially good. Scrutinizing the erupting Mount Rainier diorama is free. ",
+    "address": "500 E. Pike St., Seattle",
+    "neighborhood": "Capitol Hill",
+    "phone": "206-457-4622",
+    "website": "troveseattle.com"
+  },
+  {
+    "name": "Hokkaido Ramen Santouka",
+    "picks": "X",
+    "type": "JAPANESE, ASIAN",
+    "review_date": "7/11/14",
+    "author": "Providence Cicero",
+    "story_url": "http://www.seattletimes.com/life/food-drink/hokkaido-ramen-santouka-rich-variety-of-soups-soothe-satisfy/",
+    "photo_url": "http://static.seattletimes.com/wp-content/uploads/2014/07/2024040774-300x0.jpg",
+    "description": "This might be the best ramen in Western Washington. Everything from miso to the soy-sauce based is excellent — rich, with bold flavors that surprisingly don’t drown out the lighter ingredients. The ramen is topped with buttery pieces of braised pork belly.",
+    "address": "103 Bellevue Way N.E., Bellevue",
+    "neighborhood": "Bellevue",
+    "phone": "425-462-0141",
+    "website": "santouka-usa.com"
   }
 ]

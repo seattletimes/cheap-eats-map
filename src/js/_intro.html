@@ -1,5 +1,8 @@
 <h1>Cheap eats, mapped</h1>
 
+<p class="chatter">Chatter goes here.
+<p class="key">&bigstar; - Featured review
+
 <h2>Filter by category
   <% if (data.selected.length) { %>
   <a class="reset">(reset)</a>
@@ -30,7 +33,11 @@
 <div class="location-container">
   <ul class="locations">
     <% data.results.slice(data.listOffset, data.listOffset + data.listLength).forEach(function(l) { %>
-    <li data-marker="<%= l.id %>"> <%= l.name %>
+    <li data-marker="<%= l.id %>">
+      <% if (l.picks) { %>
+      <span class="star">&bigstar;</span>
+      <% } %>
+      <%= l.name %>
     <% }); %>
   </ul>
   <nav class="pagination">

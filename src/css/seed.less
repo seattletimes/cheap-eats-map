@@ -59,13 +59,18 @@
 }
 
 .restaurant {
+  @star-size: 13px;
   background: @df-goldenrod;
   border-radius: 100%;
   border: 1px solid white;
   box-shadow: 0 0 4px fade(black, 10%);
+  font-size: @star-size;
+  line-height: @star-size;
+  text-align: center;
+  color: white;
 
-  &.active {
-    outline: 1px dotted @df-dark-gray;
+  &.featured {
+    background: darken(@df-goldenrod, 20%);
   }
 }
 
@@ -74,19 +79,8 @@
   font-family: @df-sans;
 
   h1 {
-    font-size: 20px;
-    margin: 0;
-  }
-
-  h2 {
     font-size: 16px;
-    color: @df-middle-gray;
-    font-weight: normal;
     margin: 0;
-  }
-
-  h3 {
-    font-size: 16px;
   }
 
 }
@@ -114,6 +108,12 @@
     &.reset {
       font-size: 14px;
     }
+  }
+
+  .chatter, .key {
+    font-size: 16px;
+    color: @df-dark-gray;
+    margin: 0;
   }
 
   .categories {
@@ -153,6 +153,7 @@
     text-align: left;
     margin: 0;
     padding: 0;
+    font-size: 15px;
 
     li {
       cursor: pointer;
@@ -168,6 +169,10 @@
       &:hover, &:focus {
         text-decoration: underline;
       }
+    }
+
+    .star {
+      color: @df-goldenrod;
     }
   }
 

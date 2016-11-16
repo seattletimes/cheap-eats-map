@@ -101,8 +101,9 @@ window.eats.forEach(function(location, i) {
   var size = 16;
   var marker = L.marker([location.lat, location.long], {
     icon: L.divIcon({
-      className: "restaurant",
-      iconSize: [size, size]
+      className: `restaurant ${location.picks ? "featured" : ""}`,
+      iconSize: [size, size],
+      html: location.picks ? "&bigstar;" : ""
     })
   });
   var [month, day, year] = location.review_date.split("/").map(Number);
@@ -126,6 +127,7 @@ detailPanel.addEventListener("change", function(e) {
 detailPanel.addEventListener("click", function(e) {
   if (e.target.classList.contains("back")) {
     reset();
+    map.closePopup();
   } else if (e.target.classList.contains("reset")) {
     listOffset = 0;
     selected = [];
