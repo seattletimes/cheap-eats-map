@@ -8,4 +8,5 @@ module.exports = function(grunt) {
   grunt.registerTask("static", "Build all files", ["copy", "bundle", "less", "template"]);
   grunt.registerTask("default", ["clean", "static", "connect:dev", "watch"]);
   grunt.registerTask("quick", "Build without assets", ["clean", "bundle", "less", "template"]);
+  grunt.registerTask("update", ["sheets", "static", "publish:live"]);
 };
