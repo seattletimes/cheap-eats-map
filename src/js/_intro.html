@@ -1,8 +1,3 @@
-<h1>Cheap eats, mapped</h1>
-
-<p class="chatter">Chatter goes here.
-<p class="key">&bigstar; - Featured review
-
 <h2>Filter by category
   <% if (data.selected.length) { %>
   <a class="reset">(reset)</a>
@@ -25,7 +20,7 @@
 
 <h2>
   <% if (data.selected.length) { %>
-  Top results
+  Results
   <% } else { %>
   Most recent reviews
   <% } %>
@@ -48,3 +43,4 @@
     <a class="paginate next">&raquo;</a>
   </nav>
 </div>
+<p class="key">&bigstar; - Featured review

@@ -8,13 +8,17 @@
 
     <responsive-child>
       <main class="interactive">
-        <div class="map-wrapper">
-          <leaflet-map aria-hidden="true">
-            <tile-layer layer="cartoPositron"></tile-layer>
-          </leaflet-map>
-          <button class="locate-me"><img src="./assets/gps.svg"> <label>Locate me</label></button>
+        <h1>Cheap eats, mapped</h1>
+        <div class="row">
+          <div class="map-wrapper">
+            <leaflet-map aria-hidden="true">
+              <tile-layer layer="cartoPositron"></tile-layer>
+            </leaflet-map>
+            <button class="locate-me"><img src="./assets/gps.svg"> <label>Locate me</label></button>
+          </div>
+          <div class="detail-panel empty">Click a marker for details</div>
         </div>
-        <div class="detail-panel empty">Click a marker for details</div>
+        <p class="footnote">Seattle Times Cheap Eats reviews are based on a single visit for two. Reviewers visit restaurants anonymously and pay in full for all food, beverages and services. This map includes reviews published since 2015.
       </main>
     </responsive-child>
 

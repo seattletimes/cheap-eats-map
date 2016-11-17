@@ -1,9 +1,23 @@
 @import "seattletimes";
 
 .interactive {
+  max-width: 960px;
+
+}
+
+h1 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.footnote {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.row {
   .display-flex();
   .align-items(stretch);
-  max-width: 960px;
 
   @media @mobile {
     display: block;
@@ -74,17 +88,6 @@
   }
 }
 
-.restaurant-popup {
-  font-size: 14px;
-  font-family: @df-sans;
-
-  h1 {
-    font-size: 16px;
-    margin: 0;
-  }
-
-}
-
 .detail-panel {
   padding: 0 16px;
 
@@ -99,7 +102,7 @@
 
   h2 {
     font-size: 16px;
-    margin-bottom: 0;
+    margin: 0;
   }
 
   a {
@@ -113,7 +116,6 @@
   .chatter, .key {
     font-size: 16px;
     color: @df-dark-gray;
-    margin: 0;
   }
 
   .categories {
@@ -180,4 +182,40 @@
     .display-flex();
     .justify-content(space-between);
   }
+}
+
+.restaurant-popup {
+  h1 {
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
+
+.restaurant-detail {
+  font-size: 14px;
+  font-family: @df-sans;
+
+  h1.name {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .type {
+    font-size: 14px;
+    color: @df-middle-gray;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  .address {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  .author {
+    display: block;
+    text-align: right;
+  }
+
 }

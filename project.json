@@ -6,7 +6,7 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2016/cheap-eats-map"
     }
   },
   "title": "",
@@ -16,6 +16,6 @@
   "tags": [],
   "image": "assets/social.jpg",
   "sheets": ["1Lhfjrb3S7D3T4Cd1BzwQwrsu3J2SOm_pLWFAuQxfxMs"],
-  "production": false,
+  "production": true,
   "embedded": true
 }

@@ -27,10 +27,17 @@ var selected = [];
 var detailTemplate = dot.compile(require("./_detail.html"));
 var introTemplate = dot.compile(require("./_intro.html"));
 
+var byDate = (a, b) => b.date - a.date;
+var byName = (a, b) => b.name < a.name ? 1 : -1;
+
 var reset = function() {
   var categories = Object.keys(categoryMap).sort();
   var results = [];
-  window.eats.forEach(function(location) {
+
+  var eats = window.eats.slice();
+  eats.sort(selected.length ? byName : byDate);
+
+  eats.forEach(function(location) {
     var match = selected.length ? selected.some(s => s in location.categories) : true;
     if (match) {
       displayLayer.addLayer(location.marker);
@@ -55,7 +62,6 @@ var reset = function() {
 };
 
 var setLocation = function(location) {
-  location.marker.openPopup();
   detailPanel.innerHTML = detailTemplate({ location });
 };
 
@@ -94,7 +100,7 @@ window.eats.forEach(function(location, i) {
     categoryMap[t].push(location);
   });
 
-  if (location.website.indexOf("://") == -1) {
+  if (location.website && location.website.indexOf("://") == -1) {
     location.website = "http://" + location.website;
   }
 
@@ -106,8 +112,10 @@ window.eats.forEach(function(location, i) {
       html: location.picks ? "&bigstar;" : ""
     })
   });
-  var [month, day, year] = location.review_date.split("/").map(Number);
-  location.date = new Date(year, month - 1, day);
+  if (location.review_date) {
+    var [month, day, year] = location.review_date.split("/").map(Number);
+    location.date = new Date(year, month - 1, day);
+  }
   marker.addEventListener("click", clickedMarker);
   marker.bindPopup(`<div class="restaurant-popup"><h1>${location.name}</h1></div>`);
   marker.data = location;
@@ -142,6 +150,7 @@ detailPanel.addEventListener("click", function(e) {
   } else if (e.target.hasAttribute("data-marker")) {
     var id = e.target.getAttribute("data-marker") * 1;
     var location = lookup[id];
+    location.marker.openPopup();
     setLocation(location);
     map.setView(location.marker.getLatLng(), 14);
   }
