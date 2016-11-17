@@ -18,14 +18,14 @@
 <% }); %>
 </ul>
 
-<h2>
-  <% if (data.selected.length) { %>
-  Results
-  <% } else { %>
-  Most recent reviews
-  <% } %>
-</h2>
 <div class="location-container">
+  <h2>
+    <% if (data.selected.length) { %>
+    Results
+    <% } else { %>
+    Most recent reviews
+    <% } %>
+  </h2>
   <ul class="locations">
     <% data.results.slice(data.listOffset, data.listOffset + data.listLength).forEach(function(l) { %>
     <li data-marker="<%= l.id %>">
@@ -38,7 +38,7 @@
   <nav class="pagination">
     <a class="paginate previous">&laquo;</a>
     <%= data.listOffset + 1 %> -
-    <%= data.listLength > data.results.length ? data.results.length : data.listOffset  + data.listLength %>
+    <%= data.listOffset + data.listLength > data.results.length ? data.results.length : data.listOffset  + data.listLength %>
     of <%= data.results.length %>
     <a class="paginate next">&raquo;</a>
   </nav>
