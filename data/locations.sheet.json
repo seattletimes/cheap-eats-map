@@ -1432,5 +1432,21 @@
     "long": "-122.122235",
     "phone": "425-497-5100",
     "website": "feedcoburgers.com"
+  },
+  {
+    "name": "Sea Wolf Bakers",
+    "picks": "X",
+    "type": "BAKERY",
+    "review_date": "11/18/2016",
+    "author": "Paige Collins",
+    "story_url": "http://www.seattletimes.com/life/food-drink/wolf-down-these-breads-and-pastries/",
+    "photo_url": "http://static.seattletimes.com/wp-content/uploads/2016/11/915b91de-ac5e-11e6-8658-f19bfd35e388-780x500.jpg",
+    "description": "Brothers Kit and Jesse Schumann founded Sea Wolf Bakers in 2014, baking the bread at night using borrowed kitchens. Now they have their own home in Fremont, next to Manolin on Stone Way. Walk up to the counter and choose from the trays on an industrial baking rack; you can do no wrong ordering any of the pastries and breads. Their sourdough is killer, rye is tangy and lye rolls are what every other pretzel wants to be. Try them all.",
+    "address": "3621 Stone Way N., Seattle",
+    "neighborhood": "Fremont",
+    "lat": 47.6512181,
+    "long": "-122.3430761",
+    "phone": "206-457-4181 ",
+    "website": "seawolfbakers.com"
   }
 ]
