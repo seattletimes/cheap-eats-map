@@ -1448,5 +1448,34 @@
     "long": "-122.3430761",
     "phone": "206-457-4181 ",
     "website": "seawolfbakers.com"
+  },
+  {
+    "name": "Sweet Iron",
+    "type": "CAFE, AMERICAN",
+    "review_date": "11/22/2016",
+    "author": "Bethany Jean Clement",
+    "story_url": "http://www.seattletimes.com/life/food-drink/waffley-goodness-at-sweet-iron/",
+    "photo_url": "http://static.seattletimes.com/wp-content/uploads/2016/11/61498c7c-b0f9-11e6-be46-1b42da1a1917-780x500.jpg",
+    "description": "Made with a briochelike dough instead of batter, Belgian Liège–style waffles emerge from the iron dense and chewy at Sweet Iron. Bits of pearl sugar in the dough make for tiny hits of caramelized sweetness all around the golden-browned exterior. One waffle with a topping or three (they have both sweet and savory options) would make a sturdy breakfast or lunch — or serve as fine ballast during a night out on Pike/Pine. ",
+    "address": "1416 10th Ave., Seattle",
+    "neighborhood": "Capitol Hill",
+    "lat": 47.613453,
+    "long": "-122.319045",
+    "website": "sweetironwaffles.com"
+  },
+  {
+    "name": "Emma's BBQ",
+    "picks": "X",
+    "type": "AMERICAN",
+    "review_date": "11/28/2016",
+    "author": "Jill Lightner",
+    "story_url": "http://www.seattletimes.com/life/food-drink/searching-for-seattles-best-barbecue-visit-emmas-bbq-and-come-hungry/",
+    "photo_url": "http://static.seattletimes.com/wp-content/uploads/2016/11/f359c74e-b1d0-11e6-920e-4efbb93c567c-780x500.jpg",
+    "description": "This small Hillman City restaurant does not mess around when it comes to the portion size of their excellent barbecue. It’s some of Seattle’s finest. Meats are available in dinner combos, which come with two sides and your choice of white, wheat or cornbread. They’re all so good, it’s impossible to play favorites. ",
+    "address": "5303 Rainier Ave. S., Seattle",
+    "neighborhood": "Hillman City",
+    "lat": 47.5535634,
+    "long": "-122.2804938",
+    "phone": "206-413-1523"
   }
 ]
